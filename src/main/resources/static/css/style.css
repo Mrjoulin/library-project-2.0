@@ -1,0 +1,25 @@
+body {
+  background: #F5DEB3
+}
+h1, h2, h3{
+    color: #800080;
+    padding: 2px;
+    text-align: center;
+}
+table{
+position:absolute;
+top:1px;
+
+}
+td{
+width:300px;
+text-align:center;
+}
+.conteiner {
+  width:100%;
+  position: absolute;
+  font-size: 100%;
+}
+.table{
+width:100%;
+}

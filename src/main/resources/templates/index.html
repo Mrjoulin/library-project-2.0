@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en, ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Электронный библиотечный справочник</title>
+        <link rel="stylesheet" href="static/css" th:href="@{/css/style.css}"/>
+    </head>
+    <body>
+    <div class="header">
+        <h1 th:text="'Электронный библиотечный справочник'"/>
+        <h3 th:text="'Здесь вы можете выбрать нужный вам раздел или направление'"/>
+    </div>
+    <div class="conteiner">
+        <table class="table">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td><h2 th:text="'Все разделы'"/></td>
+                        </tr>
+                        <tr th:each="section : ${section}">
+                            <td><a th:href="@{'/section/' + ${section.getTitle()}}"><h4 th:text="${section.getTitle()}"/></a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td><h2 th:text="'Все направления ОГЭ'"/></td>
+                        </tr>
+                        <tr th:each="oge : ${oge}">
+                            <td><a th:href="@{'/oge/' + ${oge.getTitle()}}"><h4 th:text="${oge.getTitle()}"/></a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td><h2 th:text="'Все направления ЕГЭ'"/></td>
+                        </tr>
+                        <tr th:each="ege : ${ege}">
+                            <td><a th:href="@{'/ege/' + ${ege.getTitle()}}"><h4 th:text="${ege.getTitle()}"/></a></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td><h2 th:text="'Все направления итогового сочинения'"/></td>
+                        </tr>
+                        <tr th:each="essay : ${essay}">
+                            <td><a th:href="@{'/essay/' + ${essay.getTitle()}}"><h4 th:text="${essay.getTitle()}"/></a></td>
+                        </tr>
+                        <tr>
+                            <td><h2 th:text="'Список всех книг:'"/></td>
+                        </tr>
+                        <tr>
+                            <td><a href="/books"><h4 th:text="'Список'"/></a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </body>
+</html>

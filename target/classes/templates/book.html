@@ -1,0 +1,43 @@
+  <!DOCTYPE html>
+  <html lang="en, ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <title>Книги по запросу</title>
+      <link rel="stylesheet" href="static/css" th:href="@{/css/bookstyle.css}"/>
+    </head>
+    <body>
+      <div class="header">
+        <h1 th:text="'Книги по запросу:'"/>
+      </div>
+      <div class="conteiner">
+        <table>
+          <tr>
+            <td><h2 th:text="'Название книги'"/></td>
+            <td><h2 th:text="'Автор'"/></td>
+            <td><h2 th:text="'Раздел'"/></td>
+            <td><h2 th:text="'Год издания'"/></td>
+            <td><h2 th:text="'Число страниц'"/></td>
+            <td><h2 th:text="'Наличие иллюстраций'"/></td>
+            <td><h2 th:text="'Количество книг в наличие'"/></td>
+            <td><h2 th:text="'Краткое описание'"/></td>
+            <td><h2 th:text="'Направления ОГЭ'"/></td>
+            <td><h2 th:text="'Направления ЕГЭ'"/></td>
+            <td><h2 th:text="'Направления Итогового сочинения'"/></td>
+          </tr>
+          <tr th:each="books : ${books}">
+            <td><h4 th:text="${books.getTitle()}"/></td>
+            <td><h4 th:text="${books.getAuthors()}"/></td>
+            <td><h4 th:text="${books.getSection()}"/></td>
+            <td><h4 th:text="${books.getYearOfPublishing()}"/></td>
+            <td><h4 th:text="${books.getNumberOfPages()}"/></td>
+            <td><h4 th:text="${books.isHaveIllustrations()}"/></td>
+            <td><h4 th:text="${books.getNumberOfCopies()}"/></td>
+            <td><h4 th:text="${books.getAnnotations()}"/></td>
+            <td><h4 th:text="${books.getDirectionOGE()}"/></td>
+            <td><h4 th:text="${books.getDirectionEGE()}"/></td>
+            <td><h4 th:text="${books.getDirectionEssay()}"/></td>
+          </tr>
+        </table>
+      </div>
+    </body>
+  </html>
